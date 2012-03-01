@@ -1,3 +1,5 @@
+#Gemfile for 'Rails-3 in Action' (Chapter 3) 
+
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
@@ -16,6 +18,10 @@ group :assets do
   gem 'uglifier'
 end
 
+# CSS mashup gem
+gem "haml"
+gem "compass", ">= 0.11.5"
+
 gem 'jquery-rails'
 
 # Use unicorn as the web server
@@ -27,7 +33,12 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :test, :development do
+  gem 'rspec-rails', '~> 2.5'
+end
+
 group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
